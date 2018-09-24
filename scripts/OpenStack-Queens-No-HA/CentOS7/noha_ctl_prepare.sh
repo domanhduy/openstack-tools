@@ -106,9 +106,9 @@ function khai_bao_host {
 
 # Cai dat NTP server 
 function install_ntp_server {
-        yum -y install chrony
         for IP_ADD in $CTL1_IP_NIC1 $COM1_IP_NIC1 $COM2_IP_NIC1
         do 
+		  yum -y install chrony
           echocolor "Cau hinh NTP cho $IP_ADD"
           sleep 3
           cp /etc/chrony.conf /etc/chrony.conf.orig
@@ -120,7 +120,7 @@ server 3.asia.pool.ntp.org iburst/g' /etc/chrony.conf
                   sed -i 's/server 1.centos.pool.ntp.org iburst/#/g' /etc/chrony.conf
                   sed -i 's/server 2.centos.pool.ntp.org iburst/#/g' /etc/chrony.conf
                   sed -i 's/server 3.centos.pool.ntp.org iburst/#/g' /etc/chrony.conf
-                  sed -i 's/#allow 192.168\/16/allow 192.168.20.0\/24/g' /etc/chrony.conf
+                  sed -i 's/#allow 192.168\/16/allow 10.10.10.0\/24/g' /etc/chrony.conf
                   sleep 5                  
                   systemctl enable chronyd.service
                   systemctl start chronyd.service
@@ -163,9 +163,9 @@ sleep 3
 copykey
 setup_config
 
-echocolor "Cai dat proxy tren cac node"
-sleep 3
-install_proxy
+#echocolor "Cai dat proxy tren cac node"
+#sleep 3
+#install_proxy
 
 echocolor "Cai dat repo tren cac node"
 sleep 3
