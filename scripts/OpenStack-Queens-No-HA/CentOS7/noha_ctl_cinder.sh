@@ -153,8 +153,8 @@ function cinder_enable_restart() {
 		systemctl start openstack-cinder-volume.service 
 		systemctl start  target.service 
 	else
-		systemctl enable openstack-cinder-api.service openstack-cinder-scheduler.service openstack-cinder-backup.service
-		systemctl start openstack-cinder-api.service openstack-cinder-scheduler.service openstack-cinder-backup.service
+		systemctl enable openstack-cinder-api.service openstack-cinder-scheduler.service openstack-cinder-backup.service openstack-cinder-volume.service
+		systemctl start openstack-cinder-api.service openstack-cinder-scheduler.service openstack-cinder-backup.service openstack-cinder-volume.service
 	fi
 }
 
