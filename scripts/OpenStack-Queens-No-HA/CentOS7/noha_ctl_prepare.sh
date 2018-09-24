@@ -54,7 +54,7 @@ function install_proxy {
         do
             echocolor "Cai dat install_proxy tren $IP_ADD"
             sleep 3
-            ssh root@$IP_ADD 'echo "proxy=http://192.168.70.111:3142" >> /etc/yum.conf' 
+            ssh root@$IP_ADD 'echo "proxy=http://172.16.4.134:3142" >> /etc/yum.conf' 
             yum -y update
 
         done
@@ -164,9 +164,9 @@ sleep 3
 copykey
 setup_config
 
-#echocolor "Cai dat proxy tren cac node"
-#sleep 3
-#install_proxy
+echocolor "Cai dat proxy tren cac node"
+sleep 3
+install_proxy
 
 echocolor "Cai dat repo tren cac node"
 sleep 3
