@@ -164,9 +164,9 @@ sleep 3
 copykey
 setup_config
 
-echocolor "Cai dat proxy tren cac node"
-sleep 3
-install_proxy
+#echocolor "Cai dat proxy tren cac node"
+#sleep 3
+#install_proxy
 
 echocolor "Cai dat repo tren cac node"
 sleep 3
